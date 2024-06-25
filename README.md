@@ -34,3 +34,5 @@ Pentru acest proiect, am implementat o interfață grafică utilizând librăria
    * Datele sunt afișate sub formă de tabel:
      * Selectarea unui rând permite ștergerea acestuia printr-un buton dedicat.
      * Modificările pot fi realizate prin click pe o celulă, completarea cu datele noi, iar actualizarea se face în timp real, după validare.
+
+Program realizat pentru materia "Proiect de semestru" - anul 3, semestrul 2.

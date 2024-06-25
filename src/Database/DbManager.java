@@ -56,7 +56,7 @@ public class DbManager {
                  dataMentenanta TIMESTAMP NOT NULL,
                  descriere TEXT NOT NULL,
                  cost DOUBLE PRECISION NOT NULL,
-                 FOREIGN KEY (vehicul_id) REFERENCES vehicule(id)
+                 FOREIGN KEY (vehicul_id) REFERENCES vehicule(id) ON DELETE CASCADE
                 );""";
 
         String tranzactie = """
@@ -67,8 +67,8 @@ public class DbManager {
                  dataStart TIMESTAMP NOT NULL,
                  dataSfarsit TIMESTAMP NOT NULL,
                  suma DOUBLE PRECISION NOT NULL,
-                 FOREIGN KEY (vehicul_id) REFERENCES vehicule(id),
-                 FOREIGN KEY (client_id) REFERENCES clienti(id)
+                 FOREIGN KEY (vehicul_id) REFERENCES vehicule(id) ON DELETE CASCADE,
+                 FOREIGN KEY (client_id) REFERENCES clienti(id) ON DELETE CASCADE
                 );""";
 
         try (Connection conn = connect();
@@ -83,4 +83,7 @@ public class DbManager {
         }
     }
 
+    public static void main(String[] args) {
+        creareTabele();
+    }
 }
